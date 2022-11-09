@@ -20,7 +20,7 @@ public class BankAccount {
 
         this.accNO = 101;
         this.custName = "Manas";
-        this.accType = "current";
+        this.accType = "savings";
         this.balance = 1000;
     }
         void deposit ( float amt)

@@ -2,13 +2,14 @@ package com.highpeak.anirudha;
 
 public class Greeter {
     String name;
-    Greeter(String name){
-        this.name=name;
+
+    public Greeter(String name) {
+        this.name = name;
     }
     public String sayHello(){
-        return "hello, "+name +"!";
+       return "Hello, "+name+"!";
     }
-    public String sayGoodbye(){
-        return "Goodbye, "+name +"!";
-    }
+   public  String sayGoodBye(){
+        return "GoodBye, "+name+"!";
+   }
 }
