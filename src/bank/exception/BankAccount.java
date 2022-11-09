@@ -60,7 +60,7 @@ public class BankAccount {
         }
         public void withdraw ( float amt){
             if (accType.equals("savings")) {
-                if (balance <= 1000) {
+                if (amt > 1000) {
                     try {
                         throw new InsufficientFundsException();
                     } catch (InsufficientFundsException ife) {
@@ -71,7 +71,7 @@ public class BankAccount {
                         try {
                             throw new NegativeAmountException();
                         } catch (NegativeAmountException nae) {
-                            System.out.println("Negaive Amount cant be deposited");
+                            System.out.println("Negaive Amount cant be withdrawn");
                         }
                     }
                 else {
@@ -80,23 +80,24 @@ public class BankAccount {
                     }
                 }
             if (accType.equals("current")) {
-                if (balance < 5000) {
+                if (amt > 5000) {
                     try {
                         throw new InsufficientFundsException();
                     } catch (InsufficientFundsException ife) {
                         System.out.println("WE CANT Withdraw AMOUNT INSUFFICENT BALANCE ");
                     }
-                } else if (amt < 0) {
+                }
+                else if (amt < 0) {
                     try {
                         throw new NegativeAmountException();
                     } catch (NegativeAmountException nae) {
-                        System.out.println("Negaive Amount cant be deposited");
+                        System.out.println("Negaive Amount cant be withdrawn");
                     }
-                } else {
+                }
+                else {
                     balance = getBalance() - amt;
                     System.out.println("Current balance is =" + balance);
                 }
-
             }
     }
         void display()
@@ -111,7 +112,7 @@ public class BankAccount {
             b.display();
             b.withdraw(5000);
             b.display();
-            b.withdraw(2000);
+            b.withdraw(1000);
             b.getBalance();
             b.display();
         }
